@@ -84,7 +84,7 @@ function sendMessage() {
   .then(data => {
     console.log(data.json);
     var elm = postMessage(data, "Mr. Krabs", -1, "left", "textspace");
-    textToSpeech(elm);
+    //textToSpeech(elm);
     textSpace.scrollTop = textSpace.scrollHeight;
   });
 }
