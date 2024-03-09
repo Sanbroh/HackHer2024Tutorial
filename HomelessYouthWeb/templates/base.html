@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+  {% block style %}{% endblock %}
+  {% block script %}{% endblock %}
+
+  <!-- JS Dependencies -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <!-- Inter -->
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>MyApp</title>
+</head>
+<body>
+    <div class="main">
+      {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
