@@ -1,0 +1,7 @@
+body {
+   background-color: tan;
+}
+
+.container > h1 > strong {
+  color: darkgreen;
+}
