@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+<script>
+  var prompts = {{ prompts|tojson }};
+  console.log(prompts);
+</script>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Hello, world! You are on <strong>Chat</strong>!</h1>
+    <div id="default-text-bubble-left" class="text-bubble text-bubble-left" onclick="textToSpeech(this)">
+      <img class="text-bubble-img" src="{{ url_for('static',filename='img/krabs.png') }}" />
+      <div class="text-bubble-txt">
+        <p>Character Name</p>
+        <p>THIS IS A SENTENCE THAT THE CHARACTER IS SAYING...</p>
+      </div>
+    </div>
+    <div id="default-text-bubble-right" class="text-bubble text-bubble-right" onclick="textToSpeech(this)">
+      <div class="text-bubble-txt">
+        <p>Character Name</p>
+        <p>THIS IS A SENTENCE THAT THE CHARACTER IS SAYING...</p>
+      </div>
+      <img class="text-bubble-img" src="{{ url_for('static',filename='img/will.jpg') }}" />
+    </div>
+    <div id="textspace">
+
+    </div>
+    <div id="send-message">
+      <textarea id="send-area" type="text" name="message"
+             placeholder="Hello, I am..."
+             value="{{ request.form['message'] }}" id="prompt"></textarea>
+      <button type="submit" onclick="sendMessage();">Send Message</button>
+    </div>
+  </div>
+{% endblock %}

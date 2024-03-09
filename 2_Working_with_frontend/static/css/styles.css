@@ -1,0 +1,113 @@
+body {
+   background-color: tan;
+}
+
+.container > h1 > strong {
+  color: darkgreen;
+}
+
+.container > a {
+  color: white;
+  background-color: black;
+
+  border-radius: 4px;
+  padding: 10px 12px;
+
+  transition-duration: 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container > a:hover {
+  color: black;
+  background-color: white;
+
+  transition-duration: 0.5s;
+}
+
+.text-bubble {
+  margin-bottom: 20px;
+
+  opacity: 75%;
+  cursor: pointer;
+}
+
+.text-bubble:hover {
+  opacity: 100%;
+}
+
+.text-bubble-center {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-bubble-right {
+  text-align: right;
+}
+
+.text-bubble-txt, .text-bubble-img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.text-bubble-img {
+  width: 4vw;
+  height: 4vw;
+
+  background-color: lightgray;
+  border-radius: 8px;
+  border-style: solid;
+
+  border-bottom-width: 2px;
+}
+
+.text-bubble-txt {
+  background-color: white;
+  border-radius: 8px;
+  border-style: solid;
+
+  border-bottom-width: 2px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  font-size: 20px;
+}
+
+.text-bubble-left > .text-bubble-txt {
+  max-width: 75%;
+}
+
+.text-bubble-right > .text-bubble-txt {
+  max-width: 75%;
+}
+
+.text-bubble-txt > p:nth-child(1) {
+  font-weight: bolder;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#default-text-bubble-left, #default-text-bubble-center, #default-text-bubble-right {
+  display: none;
+}
+
+#textspace {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  padding-left: 5%;
+  padding-right: 5%;
+
+  border-left: solid;
+  border-right: solid;
+}
+
+#send-message {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
