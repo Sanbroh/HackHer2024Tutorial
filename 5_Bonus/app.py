@@ -6,7 +6,7 @@ import openai
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-os.environ["OPENAI_API_KEY"] = 'put_your_secret_key_here!'
+os.environ["OPENAI_API_KEY"] = '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'
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/')
@@ -19,20 +19,20 @@ prompts = []
 def chat():
     return render_template('chat.html', prompts=prompts)
 
-answers = ["Yes I love money.",
-    "Spongebob is a sponge.",
-    "You wanna help me make some crabby patties?",
-    "Yummers!",
-    "Bikini bottom is like my home. I live in it.",
-    "Will Smith more like Won't Smith."]
+answers = ["Subscribe to help house and feed youth in Kingston today!",
+    "Thank you so much for your time.",
+    "Give help or get help today.",
+    "We're here to provide help, or give you the resources you need.",
+    "Ask about local food banks, volunteer opportunities, and donation programs near you!"
+           ]
 
 def getNarratorResponse(prompt, roleplaying):
     narratorResponse = openai.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "You will roleplay as Mr. Krabs in from spongebob squarepants and will respond to prompts as him in character"},
+        {"role": "system", "content": "You will roleplay as a helping assistant providing informational resources in Kingston, Ontario to people trying to access or volunteer for homeless shelters"},
         {"role": "assistant", "content": "You are speaking to " + str(roleplaying) + ", so respond as if you are talking to him."},
-        {"role": "user", "content": "Being Mr. Krabs, give a response to the user saying '" + prompt + ". The response is what Mr. Krabs would say" + ". Make this one to four sentences response. Do not mention that you are Mr. Krabs in the response, and be objective, providing no bias, and only the response. When referencing the user, refer to them as who they are and not as a random character using the third-person perspective. Always and only provide the reply from as Mr. Krabs. If you cannot provide a response, then just say you have no opinions on this topic."}
+        {"role": "user", "content": "Being a Kingston Homeless Shelter informational assistant, give a response to the user saying '" + prompt + ". The response is what a helper chatbot would say" + ". Make this one to four sentences response. Do not mention that you are a chatbot in the response, and be objective, providing no bias, and only the response. When referencing the user, refer to them as who they are and not as a random character using the third-person perspective. Always and only provide the reply from as a chatbot. If you cannot provide a response, then just say you have no opinions on this topic."}
     ]
     ).choices[0].message.content
 
