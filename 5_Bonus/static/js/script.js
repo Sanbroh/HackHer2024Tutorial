@@ -6,7 +6,7 @@ window.onload = function() {
     if (i % 2 == 0) {
       postMessage(prompts[i], "Will Smith", -1, "right", "textspace");
     } else {
-      postMessage(prompts[i], "Will Smith", -1, "left", "textspace");
+      postMessage(prompts[i], "Mr. Krabs", -1, "left", "textspace");
     }
   }
 }
