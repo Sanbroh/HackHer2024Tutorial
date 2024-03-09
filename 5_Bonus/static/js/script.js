@@ -13,7 +13,7 @@ window.onload = function() {
 
 function makeid(length) {
     let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; //apparently posting this is an information leak and disabled this key 0.0
     const charactersLength = characters.length;
     let counter = 0;
     while (counter < length) {
